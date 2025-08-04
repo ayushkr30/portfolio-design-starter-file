@@ -4,6 +4,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { DATA } from "@/data/resume"
 import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -60,7 +61,9 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
+          <TooltipProvider delayDuration={0}>
               {children}
+          </TooltipProvider>
         </ThemeProvider>
        
       </body>
